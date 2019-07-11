@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_nav_message"
+            android:title="通知" />
+        <item
+            android:id="@+id/nav_homework"
+            android:icon="@drawable/ic_nav_homework"
+            android:title="作业" />
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_nav_schedule"
+            android:title="课程表" />
+        <item
+            android:id="@+id/nav_location"
+            android:icon="@drawable/ic_nav_location"
+            android:title="位置" />
+    </group>
+
+    <item android:title="工具">
+        <menu>
+            <item
+                android:id="@+id/nav_translate"
+                android:icon="@drawable/ic_nav_translate"
+                android:title="翻译" />
+            <item
+                android:id="@+id/nav_calculator"
+                android:icon="@drawable/ic_nav_calculator"
+                android:title="计算器" />
+            <item
+                android:id="@+id/nav_radix"
+                android:icon="@drawable/ic_nav_radix"
+                android:title="进制转换" />
+            <item
+                android:id="@+id/nav_console"
+                android:icon="@drawable/ic_nav_console"
+                android:title="控制台" />
+        </menu>
+    </item>
+
+    <item android:title="关于">
+        <menu>
+            <item
+                android:id="@+id/nav_update"
+                android:icon="@drawable/ic_nav_update"
+                android:title="更新日志" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_nav_about"
+                android:title="关于APP" />
+        </menu>
+    </item>
+
+</menu>
