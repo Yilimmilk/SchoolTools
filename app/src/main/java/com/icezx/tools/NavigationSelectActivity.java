@@ -18,6 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.icezx.tools.Calculator.CalculatorActivity;
 import com.icezx.tools.Homework.HomeworkActivity;
+import com.icezx.tools.Logical.LogicalActivity;
 import com.icezx.tools.Radix.RadixActivity;
 import com.icezx.tools.Schedule.ScheduleActivity;
 
@@ -194,6 +195,10 @@ public class NavigationSelectActivity extends AppCompatActivity {
                         activityClass = RadixActivity.class;
                         break;
 
+                    case R.id.nav_logical:
+                        activityClass = LogicalActivity.class;
+                        break;
+
                 }
                 if (activityClass != null) {
                     startActivity(new Intent(NavigationSelectActivity.this, activityClass), extras);
@@ -230,6 +235,8 @@ public class NavigationSelectActivity extends AppCompatActivity {
             navigationView.setCheckedItem(R.id.nav_calculator);
         } else if (RadixActivity.class.isAssignableFrom(getClass())) {
             navigationView.setCheckedItem(R.id.nav_radix);
+        } else if (RadixActivity.class.isAssignableFrom(getClass())) {
+            navigationView.setCheckedItem(R.id.nav_logical);
         }
     }
 }

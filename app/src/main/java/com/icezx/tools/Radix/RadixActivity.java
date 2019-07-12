@@ -51,7 +51,22 @@ public class RadixActivity extends NavigationSelectActivity implements CompoundB
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.radix_activity_main);
+        setContentView(R.layout.default_nav_view);
+
+        View MainActivityView=findViewById(R.id.default_include_mainactivity);
+        View CalculatorView=findViewById(R.id.default_include_calculator);
+        View HomeWorkView=findViewById(R.id.default_include_homework);
+        View LogicalView=findViewById(R.id.default_include_logical);
+        View RadixView=findViewById(R.id.default_include_radix);
+        View ScheduleView=findViewById(R.id.default_include_schedule);
+
+        MainActivityView.setVisibility(View.GONE);
+        CalculatorView.setVisibility(View.GONE);
+        HomeWorkView.setVisibility(View.GONE);
+        LogicalView.setVisibility(View.GONE);
+        RadixView.setVisibility(View.VISIBLE);
+        ScheduleView.setVisibility(View.GONE);
+
         setTitle("进制转换");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

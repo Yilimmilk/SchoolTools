@@ -37,6 +37,10 @@
                 android:icon="@drawable/ic_nav_radix"
                 android:title="进制转换" />
             <item
+                android:id="@+id/nav_logical"
+                android:icon="@drawable/ic_nav_logical"
+                android:title="逻辑运算" />
+            <item
                 android:id="@+id/nav_console"
                 android:icon="@drawable/ic_nav_console"
                 android:title="控制台" />

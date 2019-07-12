@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -23,7 +24,22 @@ public class CalculatorActivity extends NavigationSelectActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculator_activity_main);
+        setContentView(R.layout.default_nav_view);
+
+        View MainActivityView=findViewById(R.id.default_include_mainactivity);
+        View CalculatorView=findViewById(R.id.default_include_calculator);
+        View HomeWorkView=findViewById(R.id.default_include_homework);
+        View LogicalView=findViewById(R.id.default_include_logical);
+        View RadixView=findViewById(R.id.default_include_radix);
+        View ScheduleView=findViewById(R.id.default_include_schedule);
+
+        MainActivityView.setVisibility(View.GONE);
+        CalculatorView.setVisibility(View.VISIBLE);
+        HomeWorkView.setVisibility(View.GONE);
+        LogicalView.setVisibility(View.GONE);
+        RadixView.setVisibility(View.GONE);
+        ScheduleView.setVisibility(View.GONE);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("计算器");
