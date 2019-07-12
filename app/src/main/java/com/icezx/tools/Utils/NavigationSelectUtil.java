@@ -1,4 +1,4 @@
-package com.icezx.tools;
+package com.icezx.tools.Utils;
 
 import android.app.ActivityOptions;
 import android.app.FragmentManager;
@@ -19,10 +19,12 @@ import com.google.android.material.navigation.NavigationView;
 import com.icezx.tools.Calculator.CalculatorActivity;
 import com.icezx.tools.Homework.HomeworkActivity;
 import com.icezx.tools.Logical.LogicalActivity;
+import com.icezx.tools.MainActivity;
+import com.icezx.tools.R;
 import com.icezx.tools.Radix.RadixActivity;
 import com.icezx.tools.Schedule.ScheduleActivity;
 
-public class NavigationSelectActivity extends AppCompatActivity {
+public class NavigationSelectUtil extends AppCompatActivity {
 
     private static final String TAG = "BaseActivity";
 
@@ -171,7 +173,7 @@ public class NavigationSelectActivity extends AppCompatActivity {
             if (mDrawerToggle != null) mDrawerToggle.onDrawerClosed(drawerView);
             if (mItemToOpenWhenDrawerCloses >= 0) {
                 Bundle extras = ActivityOptions.makeCustomAnimation(
-                        NavigationSelectActivity.this, R.anim.fade_in, R.anim.fade_out).toBundle();
+                        NavigationSelectUtil.this, R.anim.fade_in, R.anim.fade_out).toBundle();
                 Class activityClass = null;
                 switch (mItemToOpenWhenDrawerCloses) {
                     //在这里写activity
@@ -201,7 +203,7 @@ public class NavigationSelectActivity extends AppCompatActivity {
 
                 }
                 if (activityClass != null) {
-                    startActivity(new Intent(NavigationSelectActivity.this, activityClass), extras);
+                    startActivity(new Intent(NavigationSelectUtil.this, activityClass), extras);
                     finish();
                 }
             }

@@ -6,8 +6,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,12 +25,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.icezx.tools.Utils.HttpUtil;
+import com.icezx.tools.Utils.NavigationSelectUtil;
+import com.icezx.tools.Utils.SqlHelperUtil;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends NavigationSelectActivity {
+public class MainActivity extends NavigationSelectUtil {
 
     // 定义变量
     private ProgressDialog progressDialog;
@@ -40,12 +42,16 @@ public class MainActivity extends NavigationSelectActivity {
     private String time = "";
     private String pic_url = "";
     // SQL帮助类，参数用于设置连接字符串，参数1：主机ip，参数2：数据库名，参数3：用户名，参数4：用户密码
-    private SqlHelper serverlink = new SqlHelper("hk.icezx.com", "classinfo", "classinfo", "333333");
+    private SqlHelperUtil serverlink = new SqlHelperUtil("hk.icezx.com", "classinfo", "classinfo", "333333");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.default_nav_view);
+
+//        if (!isNetworkAvailable()) {
+//            showSetNetworkUI(this);
+//        }
 
         View MainActivityView=findViewById(R.id.default_include_mainactivity);
         View CalculatorView=findViewById(R.id.default_include_calculator);
@@ -127,8 +133,8 @@ public class MainActivity extends NavigationSelectActivity {
 
                     message_main.setText(info);
                     message_time.setText(time);
-                    HttpUtils.setPicBitmap(message_pic, pic_url);
-                    HttpUtils.setPicBitmap(message_pic, pic_url);
+                    HttpUtil.setPicBitmap(message_pic, pic_url);
+                    HttpUtil.setPicBitmap(message_pic, pic_url);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -152,19 +158,6 @@ public class MainActivity extends NavigationSelectActivity {
             return null;
         }
         return jsonResult;
-    }
-
-    //界面创建时
-    protected void onStart() {
-
-        Log.i("RadixActivity", "onStart");
-
-        if (!isNetworkAvailable(this)) {
-            showSetNetworkUI(this);
-        } else {
-            //Toast.makeText(this, "连接服务器...", Toast.LENGTH_SHORT).show();
-        }
-        super.onStart();
     }
 
     //网络检查dialog，若失败则跳转到系统WIFI设置，使用网络检查方法。
@@ -251,25 +244,5 @@ public class MainActivity extends NavigationSelectActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    //网络检查方法
-    public static boolean isNetworkAvailable(Context context) {
-
-        ConnectivityManager manager = (ConnectivityManager) context
-                .getApplicationContext().getSystemService(
-                        Context.CONNECTIVITY_SERVICE);
-
-        if (manager == null) {
-            return false;
-        }
-
-        NetworkInfo networkinfo = manager.getActiveNetworkInfo();
-
-        if (networkinfo == null || !networkinfo.isAvailable()) {
-            return false;
-        }
-
-        return true;
     }
 }

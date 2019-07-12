@@ -8,10 +8,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.icezx.tools.NavigationSelectActivity;
+import com.icezx.tools.Utils.NavigationSelectUtil;
 import com.icezx.tools.R;
 
-public class LogicalActivity extends NavigationSelectActivity {
+public class LogicalActivity extends NavigationSelectUtil {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

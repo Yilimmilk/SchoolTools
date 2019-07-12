@@ -1,4 +1,4 @@
-package com.icezx.tools;
+package com.icezx.tools.Utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,7 +18,7 @@ import java.net.URL;
  * @author xuliugen
  *
  */
-public class HttpUtils {
+public class HttpUtil {
 
     public static void getNewsJSON(final String url, final Handler handler) {
 

@@ -26,15 +26,15 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.icezx.tools.NavigationSelectActivity;
 import com.icezx.tools.R;
+import com.icezx.tools.Utils.NavigationSelectUtil;
 
 /**
  * @author Yili <miaococoo@gmail.com>
  * @date 2019/07/07
  */
 
-public class RadixActivity extends NavigationSelectActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
+public class RadixActivity extends NavigationSelectUtil implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
 
     //声明所有组件
     private RadioButton rdb2, rdb8, rdb10, rdb16;

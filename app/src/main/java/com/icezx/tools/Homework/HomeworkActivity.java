@@ -26,9 +26,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.icezx.tools.NavigationSelectActivity;
+import com.icezx.tools.Utils.NavigationSelectUtil;
 import com.icezx.tools.R;
-import com.icezx.tools.SqlHelper;
+import com.icezx.tools.Utils.SqlHelperUtil;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -36,7 +36,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeworkActivity extends NavigationSelectActivity {
+public class HomeworkActivity extends NavigationSelectUtil {
 
     // 定义变量
     private ListView lvh;
@@ -47,7 +47,7 @@ public class HomeworkActivity extends NavigationSelectActivity {
     private String time = "";
     private String pic_url = "";
     // SQL帮助类，参数用于设置连接字符串，参数1：主机ip，参数2：数据库名，参数3：用户名，参数4：用户密码
-    private SqlHelper serverlink = new SqlHelper("hk.icezx.com", "classwork", "classwork", "333333");
+    private SqlHelperUtil serverlink = new SqlHelperUtil("hk.icezx.com", "classwork", "classwork", "333333");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -237,32 +237,15 @@ public class HomeworkActivity extends NavigationSelectActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.main_reload) {
-            progressDialog = new ProgressDialog(HomeworkActivity.this);//1.创建一个ProgressDialog的实例
-            progressDialog.setTitle("请稍候...");//2.设置标题
-            progressDialog.setMessage("正在读取数据库...");//3.设置显示内容
-            progressDialog.setCancelable(false);//4.设置可否用back键关闭对话框
-            progressDialog.show();//5.将ProgessDialog显示出来
 
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    // TODO Auto-generated method stub
-                    // 通过Message类来传递结果值，先实例化
-                    String jsonResult = Select();
-                    Message msg = new Message();
-                    // 下面分别是增删改查方法
-                    msg.obj = jsonResult;
-                    Log.d("",jsonResult);
-                    // 执行完以后，把msg传到handler，并且触发handler的响应方法
-                    handler.sendMessage(msg);
-                }
-            });
-            // 进程开始，这行代码不要忘记
-            thread.start();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void readSql(){
+
     }
 
     //网络检查方法

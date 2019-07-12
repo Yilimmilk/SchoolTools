@@ -12,12 +12,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.icezx.tools.NavigationSelectActivity;
+import com.icezx.tools.Utils.NavigationSelectUtil;
 import com.icezx.tools.R;
 
 import java.util.Calendar;
 
-public class ScheduleActivity extends NavigationSelectActivity {
+public class ScheduleActivity extends NavigationSelectUtil {
 
     private TextView tv12,tv13,tv14,tv15,tv16;
 

@@ -1,4 +1,4 @@
-package com.icezx.tools;
+package com.icezx.tools.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -11,7 +11,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.List;
 
-public class SqlHelper {
+public class SqlHelperUtil {
     private String drive = "com.mysql.jdbc.Driver";
     private String connStr;
     private String server;
@@ -21,7 +21,7 @@ public class SqlHelper {
     private Connection con;
     private PreparedStatement pstm;
 
-    public SqlHelper(String server, String dbName, String userName, String userPwd) {
+    public SqlHelperUtil(String server, String dbName, String userName, String userPwd) {
         this.server = server;
         this.dbName = dbName;
         this.connStr = "jdbc:mysql://" + this.server + ":3306/" + this.dbName;
