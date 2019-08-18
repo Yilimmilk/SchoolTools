@@ -75,6 +75,27 @@
             android:layout_marginTop="?attr/actionBarSize"
             layout="@layout/schedule_activity_main" />
 
+        <include
+            android:id="@+id/default_include_console_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            layout="@layout/console_activity_login" />
+
+        <include
+            android:id="@+id/default_include_console_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            layout="@layout/console_activity_main" />
+
+        <include
+            android:id="@+id/default_include_translate_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            layout="@layout/translate_activity_main" />
+
     </FrameLayout>
 
     <com.google.android.material.navigation.NavigationView

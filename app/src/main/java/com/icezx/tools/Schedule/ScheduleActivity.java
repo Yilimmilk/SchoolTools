@@ -32,6 +32,8 @@ public class ScheduleActivity extends NavigationSelectUtil {
         View LogicalView=findViewById(R.id.default_include_logical);
         View RadixView=findViewById(R.id.default_include_radix);
         View ScheduleView=findViewById(R.id.default_include_schedule);
+        View ConsoleLoginView=findViewById(R.id.default_include_console_login);
+        View ConsoleMainView=findViewById(R.id.default_include_console_main);
 
         MainActivityView.setVisibility(View.GONE);
         CalculatorView.setVisibility(View.GONE);
@@ -39,6 +41,8 @@ public class ScheduleActivity extends NavigationSelectUtil {
         LogicalView.setVisibility(View.GONE);
         RadixView.setVisibility(View.GONE);
         ScheduleView.setVisibility(View.VISIBLE);
+        ConsoleLoginView.setVisibility(View.GONE);
+        ConsoleMainView.setVisibility(View.GONE);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

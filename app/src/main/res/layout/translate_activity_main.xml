@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_trans_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="请输入要翻译的内容" />
+
+    <Spinner
+        android:id="@+id/trans_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_trans_input"
+        android:entries="@array/to" />
+
+    <Spinner
+        android:id="@+id/trans_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_alignLeft="@+id/view"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginEnd="9dp"
+        android:entries="@array/from" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="5dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/trans_from"
+        android:layout_alignLeft="@+id/trans_from"
+        android:layout_alignEnd="@+id/trans_from"
+        android:layout_alignBottom="@+id/trans_from"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="-23dp"
+        android:layout_marginEnd="-17dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/darker_gray" />
+
+</RelativeLayout>

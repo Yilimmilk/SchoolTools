@@ -59,6 +59,9 @@ public class MainActivity extends NavigationSelectUtil {
         View LogicalView=findViewById(R.id.default_include_logical);
         View RadixView=findViewById(R.id.default_include_radix);
         View ScheduleView=findViewById(R.id.default_include_schedule);
+        View ConsoleLoginView=findViewById(R.id.default_include_console_login);
+        View ConsoleMainView=findViewById(R.id.default_include_console_main);
+        View TranslateView=findViewById(R.id.default_include_translate_main);
 
         MainActivityView.setVisibility(View.VISIBLE);
         CalculatorView.setVisibility(View.GONE);
@@ -66,20 +69,14 @@ public class MainActivity extends NavigationSelectUtil {
         LogicalView.setVisibility(View.GONE);
         RadixView.setVisibility(View.GONE);
         ScheduleView.setVisibility(View.GONE);
+        ConsoleLoginView.setVisibility(View.GONE);
+        ConsoleMainView.setVisibility(View.GONE);
+        TranslateView.setVisibility(View.GONE);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("通知");
         initializeToolbar();
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -90,7 +87,7 @@ public class MainActivity extends NavigationSelectUtil {
         progressDialog = new ProgressDialog(MainActivity.this);//1.创建一个ProgressDialog的实例
         progressDialog.setTitle("请稍候...");//2.设置标题
         progressDialog.setMessage("正在读取数据库...");//3.设置显示内容
-        progressDialog.setCancelable(false);//4.设置可否用back键关闭对话框
+        progressDialog.setCancelable(true);//4.设置可否用back键关闭对话框
         progressDialog.show();//5.将ProgessDialog显示出来
 
         Thread thread = new Thread(new Runnable() {

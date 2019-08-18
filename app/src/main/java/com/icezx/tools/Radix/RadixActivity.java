@@ -59,6 +59,9 @@ public class RadixActivity extends NavigationSelectUtil implements CompoundButto
         View LogicalView=findViewById(R.id.default_include_logical);
         View RadixView=findViewById(R.id.default_include_radix);
         View ScheduleView=findViewById(R.id.default_include_schedule);
+        View ConsoleLoginView=findViewById(R.id.default_include_console_login);
+        View ConsoleMainView=findViewById(R.id.default_include_console_main);
+        View TranslateMainView=findViewById(R.id.default_include_translate_main);
 
         MainActivityView.setVisibility(View.GONE);
         CalculatorView.setVisibility(View.GONE);
@@ -66,6 +69,9 @@ public class RadixActivity extends NavigationSelectUtil implements CompoundButto
         LogicalView.setVisibility(View.GONE);
         RadixView.setVisibility(View.VISIBLE);
         ScheduleView.setVisibility(View.GONE);
+        ConsoleLoginView.setVisibility(View.GONE);
+        ConsoleMainView.setVisibility(View.GONE);
+        TranslateMainView.setVisibility(View.GONE);
 
         setTitle("进制转换");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -280,6 +286,13 @@ public class RadixActivity extends NavigationSelectUtil implements CompoundButto
                     btd.setEnabled(false);
                     bte.setEnabled(false);
                     btf.setEnabled(false);
+
+                    et2.setText("");
+                    et8.setText("");
+                    et10.setText("");
+                    et16.setText("");
+                    etText.setText("");
+
                     Log.d("", "" + select);
                 }
                 break;
@@ -306,6 +319,13 @@ public class RadixActivity extends NavigationSelectUtil implements CompoundButto
                     btd.setEnabled(false);
                     bte.setEnabled(false);
                     btf.setEnabled(false);
+
+                    et2.setText("");
+                    et8.setText("");
+                    et10.setText("");
+                    et16.setText("");
+                    etText.setText("");
+
                     Log.d("", "" + select);
                 }
                 break;
@@ -332,6 +352,13 @@ public class RadixActivity extends NavigationSelectUtil implements CompoundButto
                     btd.setEnabled(false);
                     bte.setEnabled(false);
                     btf.setEnabled(false);
+
+                    et2.setText("");
+                    et8.setText("");
+                    et10.setText("");
+                    et16.setText("");
+                    etText.setText("");
+
                     Log.d("", "" + select);
                 }
                 break;
@@ -358,6 +385,13 @@ public class RadixActivity extends NavigationSelectUtil implements CompoundButto
                     btd.setEnabled(true);
                     bte.setEnabled(true);
                     btf.setEnabled(true);
+
+                    et2.setText("");
+                    et8.setText("");
+                    et10.setText("");
+                    et16.setText("");
+                    etText.setText("");
+
                     Log.d("", "" + select);
                 }
                 break;

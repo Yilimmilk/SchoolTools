@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  * Date: 2019-07-12
  * Time: 23:49
  */
-class CheckNetworkUtil {
+public class CheckNetworkUtil {
 
     /* @author suncat
      * @category 判断是否有外网连接（普通方法不能判断外网的网络是否连接，比如连接上局域网）
