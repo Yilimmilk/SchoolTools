@@ -8,7 +8,6 @@ import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-
 public class RadixUtil {
 	private static BigInteger mBigData, mIntegerOfRadix;
 	private static String digits = "0123456789ABCDEF";

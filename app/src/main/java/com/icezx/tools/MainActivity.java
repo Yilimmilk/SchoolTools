@@ -42,7 +42,7 @@ public class MainActivity extends NavigationSelectUtil {
     private String time = "";
     private String pic_url = "";
     // SQL帮助类，参数用于设置连接字符串，参数1：主机ip，参数2：数据库名，参数3：用户名，参数4：用户密码
-    private SqlHelperUtil serverlink = new SqlHelperUtil("hk.icezx.com", "classinfo", "classinfo", "333333");
+    private SqlHelperUtil serverlink = new SqlHelperUtil("cons-ali-bj.icezx.com", "classinfo", "classinfo", "333333");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
